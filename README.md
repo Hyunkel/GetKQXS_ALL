@@ -10,7 +10,7 @@
 
 3-Save Data_KQXS Everyday At 18:45 PM
 
-# How to run project
+# How To Run Project
 1-Clone Project With "git clone <link git clone>" 
 
 2-Install node_modules With "npm install"
