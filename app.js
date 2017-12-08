@@ -41,6 +41,6 @@ var KQXSMT = require("./Router/KQXSMT/RouterMT")
 app.use('/kqxsmb',KQXSMB);
 app.use("/kqxsmn",KQXSMN);
 app.use("/kqxsmt",KQXSMT);
-app.listen(3006,function () {
+app.listen(3000,function () {
     console.log('Port 3005 Running');
 })

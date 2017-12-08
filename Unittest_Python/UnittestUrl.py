@@ -3,6 +3,7 @@ import json
 import unittest
 import CustomAssert
 import datetime
+import xmlrunner
 
 
 class UnittestSuper(unittest.TestCase, CustomAssert.CustomAssertions):
@@ -56,7 +57,9 @@ def suite():
     return suite
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":s
     runner = unittest.TextTestRunner()
     test_suite = suite()
     runner.run(test_suite)
+    demo_xml = xmlrunner.XMLTestRunner(output='./Demo_xml')
+    runner.run(demo_xml)
