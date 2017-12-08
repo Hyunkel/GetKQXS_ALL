@@ -30,7 +30,7 @@ class CustomAssertions():
                     self.assertRegexpMatches(cautruc, i, "Khong Ton Tai Gia Tri Trong Cau Truc Data")
                 self.assertTrue(k, "Khong Ton Tai Key Trong Data ")
                 self.assertTrue(v, "Khong Ton Tai Value Trong Data")
-                self.assertEqual(8, len(v), "Data Tra Ve Thieu Hoac Thua")
+                self.assertEqual(9, len(v), "Data Tra Ve Thieu Hoac Thua")
                 self.assertEqual(5, len(v["GiaiDacBiet"]), "GiaiDacBiet Tra Ve Sai")
                 self.assertEqual(5, len(v["GiaiNhat"]), "GiaiNhat Tra Ve Sai")
                 self.assertEqual(11, len(v["GiaiNhi"]), "GiaiNhi Tra Ve Sai")
