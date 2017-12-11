@@ -13,13 +13,15 @@ class UnittestSuper(unittest.TestCase, CustomAssert.CustomAssertions):
     def tearDown(self):
         print("Don dep cac truong hop cua TestUnitest")
 
-url = "http://localhost:3000/kqxsmb?id=8-11-2017"
-# request to URL
-r = requests.get(url)
 class TestURL(UnittestSuper):
+    global url
+    global r
+    url = "http://localhost:3000/kqxsmb?id=8-11-2017"
+    # request to URL
+    r = requests.get(url)
     # check status code
-    def runTest(self):
-        self.check_stt_code(r)
+    def check_stt(self):
+        self.check_stt_code(self, r)
     
     # check data response
     def check_data_rs(self):
@@ -33,11 +35,13 @@ class TestURL(UnittestSuper):
         # check structure data
         self.check_data_full_mb(r.content)
 
-url2 = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
-r2 = requests.get(url2)
 class TestURL_MN(UnittestSuper):
+    global url2
+    global r2
+    url2 = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
+    r2 = requests.get(url2)
     def check_stt(self):
-        self.check_stt_code(self,r2)
+        self.check_stt_code(self, r2)
     
     def check_data_rs(self):
         self.assertTrue(r2.content, "Khong Co Data")
@@ -48,7 +52,8 @@ class TestURL_MN(UnittestSuper):
     def check_data(self):
         self.check_data_full_mk(r2.content)
 
-         
+    
+        
 class TestURL_MT(UnittestSuper):
     def runTest(self):
         url = "http://localhost:3000/kqxsmt/kqxsqt?id=16-11-2017"
@@ -68,7 +73,4 @@ def suite():
 
 
 if __name__ == "__main__":
-    runner = unittest.TextTestRunner()
-    test_suite = suite()
-    runner.run(test_suite)
-    runner2 = unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
