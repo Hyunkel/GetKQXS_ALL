@@ -20,13 +20,17 @@ class TestURL(UnittestSuper):
         # request to URL
         r = requests.get(url)
         # check status code
-        self.check_stt_code(r)
+        def check_stt_code(self, r):
+            self.check_stt_code(r)
         # check data response
-        self.assertTrue(r.content, "Khong Co Data")
+        def check_data_rs(self, r):
+            self.assertTrue(r.content, "Khong Co Data")
         # check data valid json
-        self.check_json(r.content)
+        def check_vali_data(self, r):
+            self.check_json(r.content)
         # check structure data
-        self.check_data_full_mb(r.content)
+        def check_data_full(self, r):
+            self.check_data_full_mb(r.content)
 
 
 class TestURL_MN(UnittestSuper):
@@ -58,4 +62,7 @@ def suite():
 
 
 if __name__ == "__main__":
-    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
+    runner = unittest.TextTestRunner()
+    test_suite = suite()
+    runner.run(test_suite)
+    runner2 = unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
