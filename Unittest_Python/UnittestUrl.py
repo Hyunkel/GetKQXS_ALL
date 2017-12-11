@@ -34,6 +34,12 @@ class TestURL(unittest.TestCase):
     def check_struc_data(self):
         # check structure data
         self.check_data_full_mb(r.content)
+    
+    def runTest(self):
+        self.check_stt()
+        self.check_data_rs()
+        self.check_data_vali()
+        self.check_struc_data()
 
 class TestURL_MN(unittest.TestCase):
     global url2
@@ -51,6 +57,12 @@ class TestURL_MN(unittest.TestCase):
     
     def check_data(self):
         self.check_data_full_mk(r2.content)
+    
+    def runTest(self):
+        self.check_stt()
+        self.check_data_rs()
+        self.check_vali_data()
+        self.check_data()
 
 def suite():
     suite = unittest.TestSuite()
