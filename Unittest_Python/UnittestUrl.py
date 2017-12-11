@@ -33,15 +33,20 @@ class TestURL(UnittestSuper):
         # check structure data
         self.check_data_full_mb(r.content)
 
-
+url2 = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
+r2 = requests.get(url2)
 class TestURL_MN(UnittestSuper):
-    url = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
-    r = requests.get(url)
     def runTest(self):
-        self.check_stt_code(r)
-        self.assertTrue(r.content, "Khong Co Data")
-        self.check_json(r.content)
-        self.check_data_full_mk(r.content)
+        self.check_stt_code(r2)
+    
+    def check_data_rs(self):
+        self.assertTrue(r2.content, "Khong Co Data")
+    
+    def check_vali_data(self):
+        self.check_json(r2.content)
+    
+    def check_data(self):
+        self.check_data_full_mk(r2.content)
     
         
 class TestURL_MT(UnittestSuper):
