@@ -52,6 +52,14 @@ class TestURL_MN(unittest.TestCase):
     def check_data(self):
         self.check_data_full_mk(r2.content)
 
+def suite():
+    suite = unittest.TestSuite()
+    suite.addTest(TestURL())
+    suite.addTest(TestURL_MN())
+    return suite
+
 if __name__ == "__main__":
-    unittest.main()
+    runner = unittest.TextTestRunner()
+    test_suite = suite()
+    runner.run(test_suite)
     unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
