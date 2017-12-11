@@ -1,4 +1,5 @@
 import unittest
+import xmlrunner
 
 class OutcomesTest(unittest.TestCase):
 
