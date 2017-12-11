@@ -37,7 +37,7 @@ url2 = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
 r2 = requests.get(url2)
 class TestURL_MN(UnittestSuper):
     def check_stt(self):
-        self.check_stt_code(r2)
+        self.check_stt_code(self,r2)
     
     def check_data_rs(self):
         self.assertTrue(r2.content, "Khong Co Data")
