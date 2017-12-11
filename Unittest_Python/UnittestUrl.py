@@ -52,25 +52,5 @@ class TestURL_MN(UnittestSuper):
     def check_data(self):
         self.check_data_full_mk(r2.content)
 
-    
-        
-class TestURL_MT(UnittestSuper):
-    def runTest(self):
-        url = "http://localhost:3000/kqxsmt/kqxsqt?id=16-11-2017"
-        r = requests.get(url)
-        self.check_stt_code(r)
-        self.assertTrue(r.content, "Khong Co Data")
-        self.check_json(r.content)
-        self.check_data_full_mk(r.content)
-
-
-def suite():
-    suite = unittest.TestSuite()
-    suite.addTest(TestURL())
-    suite.addTest(TestURL_MN())
-    suite.addTest(TestURL_MT())
-    return suite
-
-
 if __name__ == "__main__":
     unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
