@@ -13,7 +13,7 @@ class UnittestSuper(unittest.TestCase, CustomAssert.CustomAssertions):
     def tearDown(self):
         print("Don dep cac truong hop cua TestUnitest")
 
-class TestURL(unittest.TestCase):
+class TestURL(UnittestSuper):
     global url
     global r
     url = "http://localhost:3000/kqxsmb?id=8-11-2017"
@@ -41,7 +41,7 @@ class TestURL(unittest.TestCase):
         self.check_data_vali()
         self.check_struc_data()
 
-class TestURL_MN(unittest.TestCase):
+class TestURL_MN(UnittestSuper):
     global url2
     global r2
     url2 = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
