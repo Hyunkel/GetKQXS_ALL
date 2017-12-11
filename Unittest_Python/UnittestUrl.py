@@ -48,13 +48,7 @@ class TestURL_MN(UnittestSuper):
     def check_data(self):
         self.check_data_full_mk(r2.content)
 
-    def runTest(self):
-        self.check_data_rs(self)
-        self.check_vali_data(self)
-        self.check_data(self)
-
-    
-        
+         
 class TestURL_MT(UnittestSuper):
     def runTest(self):
         url = "http://localhost:3000/kqxsmt/kqxsqt?id=16-11-2017"
