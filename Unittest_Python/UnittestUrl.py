@@ -53,4 +53,5 @@ class TestURL_MN(unittest.TestCase):
         self.check_data_full_mk(r2.content)
 
 if __name__ == "__main__":
+    unittest.main()
     unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
