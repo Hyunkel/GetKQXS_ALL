@@ -36,7 +36,7 @@ class TestURL(UnittestSuper):
 url2 = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
 r2 = requests.get(url2)
 class TestURL_MN(UnittestSuper):
-    def runTest(self):
+    def check_stt(self):
         self.check_stt_code(r2)
     
     def check_data_rs(self):
@@ -47,6 +47,13 @@ class TestURL_MN(UnittestSuper):
     
     def check_data(self):
         self.check_data_full_mk(r2.content)
+
+    def runTest(self):
+        self.check_data(self)
+        self.check_data_rs(self)
+        self.check_vali_data(self)
+        self.check_data(self)
+
     
         
 class TestURL_MT(UnittestSuper):
