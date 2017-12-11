@@ -49,7 +49,7 @@ class TestURL_MN(UnittestSuper):
         self.check_data_full_mk(r2.content)
 
     def runTest(self):
-        self.check_data(self)
+        self.check_stt(self)
         self.check_data_rs(self)
         self.check_vali_data(self)
         self.check_data(self)
