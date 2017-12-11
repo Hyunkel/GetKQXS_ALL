@@ -13,36 +13,37 @@ class UnittestSuper(unittest.TestCase, CustomAssert.CustomAssertions):
     def tearDown(self):
         print("Don dep cac truong hop cua TestUnitest")
 
-
+url = "http://localhost:3000/kqxsmb?id=8-11-2017"
+# request to URL
+r = requests.get(url)
 class TestURL(UnittestSuper):
+    # check status code
     def runTest(self):
-        url = "http://localhost:3000/kqxsmb?id=8-11-2017"
-        # request to URL
-        r = requests.get(url)
-        # check status code
-        def check_stt_code(self, r):
-            self.check_stt_code(r)
-        # check data response
-        def check_data_rs(self, r):
-            self.assertTrue(r.content, "Khong Co Data")
+        self.check_stt_code(r)
+    
+    # check data response
+    def check_data_rs(self):
+        self.assertTrue(r.content, "Khong Co Data")
+    
+    def check_data_vali(self):
         # check data valid json
-        def check_vali_data(self, r):
-            self.check_json(r.content)
+        self.check_json(r.content)
+    
+    def check_struc_data(self):
         # check structure data
-        def check_data_full(self, r):
-            self.check_data_full_mb(r.content)
+        self.check_data_full_mb(r.content)
 
 
 class TestURL_MN(UnittestSuper):
+    url = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
+    r = requests.get(url)
     def runTest(self):
-        url = "http://localhost:3000/kqxsmn/kqxshcm?id=16-11-2017"
-        r = requests.get(url)
         self.check_stt_code(r)
         self.assertTrue(r.content, "Khong Co Data")
         self.check_json(r.content)
         self.check_data_full_mk(r.content)
-
-
+    
+        
 class TestURL_MT(UnittestSuper):
     def runTest(self):
         url = "http://localhost:3000/kqxsmt/kqxsqt?id=16-11-2017"
