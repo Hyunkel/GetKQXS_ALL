@@ -12,4 +12,4 @@ class OutcomesTest(unittest.TestCase):
         raise RuntimeError('Test error!')
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='./Demo_xml'))
